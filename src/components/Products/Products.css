@@ -1,0 +1,207 @@
+.products {
+  margin: 80px auto;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* Controls */
+.controls {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.controls button {
+  background-color: rgba(7, 0, 58, 0);
+  color: #999;
+  border: none;
+  margin-top: 25%;
+  /* padding: 8px 12px; */
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  /* transition: background 0.3s; */
+}
+
+.controls button:hover {
+  color: #1e3c8d;
+}
+
+/* Main container for products */
+.products-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* Product Wheel */
+.product-wheel {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(0deg);
+  transition: transform 1s ease-in-out;
+}
+
+/* Individual Product Items */
+.product-item {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  transition: transform 1.5s cubic-bezier(0.5, 0, 0.5, 1);
+  opacity: 0.8;
+}
+
+.product-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Rightmost product is in focus */
+.focused {
+  transform: scale(1.7) !important;
+  opacity: 1;
+  z-index: 1000;
+}
+
+/* Product hover effect */
+.base-image,
+.hover-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.hover-image {
+  opacity: 0;
+}
+
+.product-item:hover .hover-image {
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+/* Caption Styling */
+.caption {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(7, 0, 58, 0.8);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Product Details */
+.product-details {
+  width: 60%;
+  min-height: fit-content;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  position: relative;
+}
+
+.product-details h2 {
+  padding-bottom: 10px;
+  font-size: 24px;
+  color: #333;
+}
+
+.product-details h6 {
+  padding-top: 2%;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  color: #333;
+}
+.product-details h6:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  color: #1e3c8d;
+}
+.product-details p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .products-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-wheel {
+    width: 300px;
+    height: 300px;
+  }
+
+  .product-item {
+    width: 100px;
+    height: 100px;
+  }
+
+  .focused {
+    transform: scale(1.5) !important;
+  }
+
+  .product-details {
+    width: 100%;
+    text-align: center;
+  }
+
+  .controls {
+    top: 5px;
+    right: 10px;
+  }
+
+  .controls button {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+}
+
+/* Highlight Cards */
+.product-highlights {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 4%;
+}
+
+.highlight-card {
+  background: #fff;
+  color: #333;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 14px;
+  /* font-weight: bold; */
+  text-align: center;
+  box-shadow: 2px 2px 0px #1e3c8d33;
+}
