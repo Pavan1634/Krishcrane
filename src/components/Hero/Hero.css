@@ -27,9 +27,9 @@
   width: 100%;
   height: 100%;
   background: url("../../assets/heroBg.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: relative;
+  background-repeat: repeat;
   z-index: -1;
   animation: zoomInOut 13s infinite alternate linear;
 }
